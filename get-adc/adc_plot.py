@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-
 def plot_voltage_vs_time(time, voltage, max_voltage):
     plt.figure(figsize=(10,6))
     plt.plot(time, voltage)
@@ -10,14 +9,14 @@ def plot_voltage_vs_time(time, voltage, max_voltage):
     plt.ylim(0, max_voltage)
     plt.minorticks_on()
     plt.show()
-    
+
 def plot_sampling_period_hist(time):
     sampling_periods=[]
     for i in range(len(time)-1):
         sampling_periods.append(time[i+1]-time[i])
     plt.figure(figsize=(10,6))
     plt.hist(sampling_periods)
-    plt.title("Распределение количества измерений по их продолжительности")
+    plt.title("Гистограмма периодов измерений")
     plt.xlabel("Время")
     plt.ylabel("Количество измерений")
     plt.xlim(0, 0.06)
